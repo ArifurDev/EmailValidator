@@ -16,15 +16,14 @@ class EmailValidatorController extends BaseController
     //Email Validator
     public function emailValidator(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'email' => ['required', 'email'],
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'email' => ['required', 'email:rfc,dns'],
+        // ]);
 
-        if ($validator->fails())
-        {
-            return $this->sendError('Email Validation Error.', $validator->errors());
-        }
-
+        // if ($validator->fails())
+        // {
+        //     return $this->sendError('Email Validation Error.', $validator->errors());
+        // }
 
         // Initialize library class
         $mail = new VerifyEmail();
