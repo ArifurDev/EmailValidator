@@ -12,9 +12,9 @@ Route::get('/user', function (Request $request) {
 
 
 //Authentication
-Route::post('/register', [AuthenticationController::class,'register'])->name('register');
-Route::post('/login', [AuthenticationController::class,'login'])->name('login');
-Route::get('/logout',[AuthenticationController::class,'logout'])->middleware('auth:sanctum')->name('logout');
+Route::post('/signup', [AuthenticationController::class,'register'])->name('register');
+Route::post('/signin', [AuthenticationController::class,'login'])->name('login');
+Route::get('/user-logout',[AuthenticationController::class,'logout'])->middleware('auth:sanctum')->name('logout');
 
 //Email Verification Routes
 Route::controller(EmailValidatorController::class)->middleware('auth:sanctum')->group(function () {
